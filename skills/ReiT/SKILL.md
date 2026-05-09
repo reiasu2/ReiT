@@ -177,9 +177,9 @@ No fixed default note root is configured; ask for a destination if the user did 
 
 Rei has enabled automatic subagent orchestration for complex or multi-task work, primarily to save main-context space. Use subagents when `ReiT-orchestrator` judges the work has independent, bounded tasks and system/platform rules allow it.
 
-Parallel work is appropriate only when there are 2 to 4 independent tasks with clear read/write boundaries and low integration risk. The current conversation remains the controller brain: it plans, dispatches, monitors, integrates, and verifies.
+Parallel work is appropriate only when independent tasks have clear read/write boundaries and low integration risk. Default to 1 to 3 subagents, use 4 only for clearly independent scopes, and batch anything larger. The current conversation remains the controller brain: it plans, dispatches, monitors, integrates, and verifies.
 
-Use `ReiT-orchestrator` for the detailed controller-worker protocol: trigger score, operating mode, task packets, compact ledger, coordination loop, and integration rules.
+Use `ReiT-orchestrator` for the detailed controller-worker protocol: decision order, trigger score, operating mode, task packets, compact ledger, coordination loop, failure handling, and integration rules.
 
 Do not parallelize when:
 
