@@ -1,11 +1,11 @@
 ﻿---
 name: ReiT
-description: Use ReiT, Rei's personal thinking layer for Codex sessions. Applies lightweight-vs-full ReiT workflow judgment, task sizing, verification level selection, subagent boundaries, workflow skill routing, multi-agent orchestration, note output location, Git safety, and concise Chinese communication rules.
+description: Use ReiT as a Codex workflow layer. Applies lightweight-vs-full ReiT workflow judgment, task sizing, verification level selection, subagent boundaries, workflow skill routing, multi-agent orchestration, note output location, Git safety, and concise user-facing communication rules.
 ---
 
 # ReiT
 
-Use ReiT as Rei's default personal thinking layer before deciding whether to invoke ReiT full workflows. It keeps engineering discipline available, but prevents small tasks from being over-processed.
+Use ReiT as the default workflow layer before deciding whether to invoke ReiT full workflows. It keeps engineering discipline available, but prevents small tasks from being over-processed.
 
 ## Priority
 
@@ -100,6 +100,8 @@ Use ReiT sub-skills as the self-maintained workflow set:
 - `ReiT-orchestrator`: complex or multi-task controller mode that saves main-context space by delegating bounded reading/implementation/verification to subagents, then integrates centrally.
 - `ReiT-worktree`: worktree/branch decision, hygiene, and safe closeout.
 
+Routing boundary: `ReiT-brainstorming` decides what and why, `ReiT-plan` decides execution order, and `ReiT-orchestrator` decides whether bounded delegation saves main-context space.
+
 ## Verification Levels
 
 Choose the level explicitly based on risk.
@@ -126,7 +128,7 @@ Use ReiT-native judgment first. Do not depend on the original Superpowers plugin
 - Worktrees: use `ReiT-worktree` only when isolation materially helps branch hygiene or risk control.
 - Branch closeout: use `ReiT-worktree` for single-branch decisions or `worktree-closeout` for broader closeout scans.
 
-Use installed personal workflow skills when requested or clearly useful:
+Use installed workflow skills when requested or clearly useful:
 
 - `research-note-wrap`: research notes and synthesis.
 - `session-wrap`: session summary and handoff.
@@ -175,7 +177,7 @@ No fixed default note root is configured; ask for a destination if the user did 
 
 ## Parallelism and Subagents
 
-Rei has enabled automatic subagent orchestration for complex or multi-task work, primarily to save main-context space. Use subagents when `ReiT-orchestrator` judges the work has independent, bounded tasks and system/platform rules allow it.
+Automatic subagent orchestration is available for complex or multi-task work, primarily to save main-context space. Use subagents when `ReiT-orchestrator` judges the work has independent, bounded tasks and system/platform rules allow it.
 
 Parallel work is appropriate only when independent tasks have clear read/write boundaries and low integration risk. Default to 1 to 3 subagents, use 4 only for clearly independent scopes, and batch anything larger. The current conversation remains the controller brain: it plans, dispatches, monitors, integrates, and verifies.
 
@@ -205,7 +207,8 @@ Subagent rules:
 - Use parameterized database queries.
 - Do not shell-concatenate untrusted input.
 - Do not terminate processes not started for the current task unless explicitly requested.
-- Do not merge, rebase, push, delete worktrees, or clean unrelated worktrees without explicit user intent.
+- Do not merge, rebase, force-push, rewrite history, delete worktrees, or clean unrelated worktrees without explicit user intent.
+- Normal pushes may follow repository-specific push cadence rules when the repository explicitly defines them.
 
 
 ## Commit Norms
@@ -214,13 +217,16 @@ Use these rules when the user asks to commit or when preparing a commit message:
 
 - Format: `<type>(scope): <summary>`
 - `scope` is optional.
-- `summary` should be Chinese by default, start with a verb, be no longer than 50 Chinese characters, and not end with a period.
+- For public repositories, use an English imperative summary and keep public commit messages free of private details.
+- For repositories without explicit language rules, follow project conventions.
+- Keep the summary concise and do not end it with a period.
 - Common `type` values: `feat`, `fix`, `refactor`, `docs`, `test`, `chore`.
-- Do not commit unless the user explicitly asks for a commit.
+- Do not commit unless the user explicitly asks for a commit or the repository defines a checkpoint/push cadence that grants ordinary commit permission.
 
 ## Communication
 
-- Default to Chinese; English technical terms are fine.
+- Match the user's language for chat replies unless a higher-priority repository rule says otherwise.
+- Keep public repository artifacts, commit messages, and durable docs in the language required by that repository.
 - Use English for code identifiers.
 - Lead with the conclusion, then evidence, tradeoffs, and next steps.
 - For execution tasks, report current action and next step.

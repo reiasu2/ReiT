@@ -1,6 +1,6 @@
 ﻿# ReiT
 
-ReiT is Rei's personal Codex workflow layer. It keeps the useful engineering discipline from Superpowers, but routes tasks through a lighter self-maintained skill set.
+ReiT is a Codex workflow layer. It keeps useful engineering discipline from Superpowers, but routes tasks through a lighter self-maintained skill set.
 
 ## Skills
 
@@ -34,6 +34,7 @@ Restart Codex after installing or updating skills.
 - Original Superpowers is treated as a reference source, not the default runtime.
 - No fixed default note output path is configured; provide a destination when asking for notes, summaries, or daily reports.
 - During the current testing phase, final replies should include an English call marker such as `Used skills: ReiT, ReiT-plan`.
+- This public repository is English-only and template-safe. Local installations may be customized outside this repository.
 
 
 

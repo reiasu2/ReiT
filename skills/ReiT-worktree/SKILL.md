@@ -65,7 +65,7 @@ During ReiT testing, every final reply shaped by this skill MUST end with exactl
 
 Use one of these formats:
 
-`Used skills: ReiT, <this-skill-name>`
+`Used skills: ReiT, ReiT-worktree`
 
 or, if no ReiT skill or ReiT sub-skill was actually used:
 

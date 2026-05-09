@@ -55,7 +55,7 @@ Stop and ask or report when:
 - The failure cannot be reproduced and no logs/evidence are available
 - Fixing requires changing public API, schema, auth, infra, or data migration
 - Multiple plausible root causes remain and the next diagnostic action has side effects
-- Verification cannot be run
+- Verification cannot be run and the next step would require claiming the issue is fixed
 
 ## Final Report
 
@@ -73,7 +73,7 @@ During ReiT testing, every final reply shaped by this skill MUST end with exactl
 
 Use one of these formats:
 
-`Used skills: ReiT, <this-skill-name>`
+`Used skills: ReiT, ReiT-debugging`
 
 or, if no ReiT skill or ReiT sub-skill was actually used:
 

@@ -79,7 +79,7 @@ Keep options concrete. Explain tradeoffs in terms of implementation cost, risk, 
 If the user says "OK", "continue", "looks good", or gives equivalent approval:
 
 - Small task: implement directly with targeted verification.
-- Medium task: write a short execution plan or start implementation if enough context exists.
+- Medium task: hand off to `ReiT-plan` for execution order unless the scope is already narrow and obvious.
 - Large task: switch to ReiT Full Brainstorming Mode before code.
 
 ## Output Shape
@@ -185,7 +185,7 @@ During ReiT testing, every final reply shaped by this skill MUST end with exactl
 
 Use one of these formats:
 
-`Used skills: ReiT, <this-skill-name>`
+`Used skills: ReiT, ReiT-brainstorming`
 
 or, if no ReiT skill or ReiT sub-skill was actually used:
 

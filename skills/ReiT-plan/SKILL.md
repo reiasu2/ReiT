@@ -100,7 +100,7 @@ After planning:
 
 - Small or medium plan with clear scope: proceed to implementation when the user asked to implement.
 - Large or risky plan: present the plan and wait if any user choice remains.
-- If subagents are explicitly requested, split tasks by non-overlapping ownership.
+- If subagents are needed or explicitly requested, hand off to `ReiT-orchestrator` for ownership boundaries and dispatch.
 
 ## Self-Review
 
@@ -118,7 +118,7 @@ During ReiT testing, every final reply shaped by this skill MUST end with exactl
 
 Use one of these formats:
 
-`Used skills: ReiT, <this-skill-name>`
+`Used skills: ReiT, ReiT-plan`
 
 or, if no ReiT skill or ReiT sub-skill was actually used:
 

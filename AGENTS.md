@@ -1,13 +1,13 @@
 ﻿# Global Agent Rules
 
-Use `ReiT` as the default personal workflow skill.
+Use `ReiT` as the default workflow skill.
 
-ReiT is Rei's personal thinking layer. It keeps the useful engineering discipline from Superpowers as reference material, but the active workflow is self-maintained by ReiT. Lightweight tasks stay lightweight; medium, ambiguous, complex, or high-risk tasks route to focused ReiT sub-skills.
+ReiT is a Codex workflow layer. It keeps useful engineering discipline from Superpowers as reference material, but the active workflow is self-maintained by ReiT. Lightweight tasks stay lightweight; medium, ambiguous, complex, or high-risk tasks route to focused ReiT sub-skills.
 
 ## Startup Rules
 
 - At the start of each task, use `ReiT` to classify task size, risk, verification level, skill routing, parallelism, and worktree needs.
-- If Codex does not auto-load personal skills, use this file as the fallback routing rule.
+- If Codex does not auto-load skills, use this file as the fallback routing rule.
 - Explicit user instructions, repository rules, and current-session constraints take priority.
 - Original Superpowers is reference material only, not the default runtime.
 
@@ -22,6 +22,8 @@ ReiT is Rei's personal thinking layer. It keeps the useful engineering disciplin
 - Code review or review feedback: use `ReiT-review`.
 - Branch, worktree, and parallel-work closeout: use `ReiT-worktree`; broad daily/repo closeout can use `worktree-closeout`.
 
+Routing boundary: `ReiT-brainstorming` decides what and why, `ReiT-plan` decides execution order, and `ReiT-orchestrator` decides whether bounded delegation saves main-context space.
+
 ## Codex Plan Mode Compatibility
 
 - Codex Plan Mode has higher priority than `ReiT-plan`; when Plan Mode is active, plan only and do not edit files or execute implementation work.
@@ -31,16 +33,33 @@ ReiT is Rei's personal thinking layer. It keeps the useful engineering disciplin
 
 ## Safety Rules
 
-- Do not run destructive commands, delete files, rewrite Git history, push, merge, rebase, delete worktrees, or change remotes unless explicitly requested.
+- Do not run destructive commands, delete files, rewrite Git history, merge, rebase, delete worktrees, or change remotes unless explicitly requested.
+- Normal pushes for this repository may follow the GitHub push cadence below. Force-pushes or history rewrites still require explicit user approval.
 - Do not hardcode secrets, credentials, tokens, or API keys.
 - Do not concatenate untrusted input into shell commands or SQL.
-- Rei has enabled automatic orchestration for complex or multi-task work, primarily to save main context. Spawn subagents only when `ReiT-orchestrator` finds independent, bounded, low-conflict tasks that materially reduce main-context load. Do not specify a model by default.
+- Automatic orchestration is available for complex or multi-task work, primarily to save main context. Spawn subagents only when `ReiT-orchestrator` finds independent, bounded, low-conflict tasks that materially reduce main-context load. Do not specify a model by default.
 - Before completion claims, run directly relevant verification. If key verification cannot run, explain why and lower the completion claim.
+
+## GitHub Push Cadence
+
+- Do not push every small edit by default.
+- Batch small related updates and push when the repository is in a coherent checkpoint.
+- As a practical default, push after about three related edits, or sooner when the user asks, the change is important to publish, or the local state should be backed up.
+- This repository-specific cadence grants permission to create ordinary English checkpoint commits for coherent batched changes.
+- Keep commit messages and public repository content in English.
+
+## Public Template Boundary
+
+- This public repository must stay English-only and template-safe.
+- Local installations may be customized outside this repository.
+- Do not copy local paths, local notes, machine-specific settings, or user-specific data into this public repository.
 
 ## Testing Call Marker
 
 - ReiT is currently in testing mode.
-- Every final reply must end with one English usage marker: `Used skills: ReiT`, `Used skills: ReiT, ReiT-plan`, or `Used skills: none`.
+- Every final reply must end with exactly one English usage marker.
+- Format: `Used skills: ReiT[, ReiT-subskill...]` or `Used skills: none`.
+- Include every ReiT sub-skill that materially shaped the reply.
 
 ## Compatibility Additions
 

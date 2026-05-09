@@ -1,6 +1,6 @@
 ﻿interface:
   display_name: "ReiT Brainstorming"
-  short_description: "Rei's lightweight requirement clarification and option comparison"
+  short_description: "ReiT lightweight requirement clarification and option comparison"
   default_prompt: "Use $ReiT-brainstorming to compare lightweight options before implementation."
 
 policy:

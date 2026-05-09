@@ -1,6 +1,6 @@
 ﻿interface:
   display_name: "ReiT"
-  short_description: "Rei's lightweight Superpowers-inspired thinking layer"
+  short_description: "ReiT lightweight Superpowers-inspired thinking layer"
   default_prompt: "Use $ReiT to choose the right lightweight or full workflow for this task."
 
 policy:

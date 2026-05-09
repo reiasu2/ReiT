@@ -156,7 +156,7 @@ Role: explorer / worker / verifier
 Goal: one concrete outcome
 Read scope: files/modules/commands allowed for inspection
 Write scope: files/modules allowed to edit, or "read-only"
-Do not touch: shared contracts, schemas, dependencies, root config, CI, migrations unless explicitly assigned
+Do not touch: shared contracts, schemas, dependencies, root config, CI, migrations, or main entry points without controller approval after `ReiT-plan`
 Expected output: compact findings / changed files / verification result / blockers
 Stop conditions: scope expansion, conflicting edits, missing context, unsafe change, verification failure outside scope
 ```
