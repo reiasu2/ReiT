@@ -1,0 +1,7 @@
+﻿interface:
+  display_name: "ReiT Orchestrator"
+  short_description: "ReiT multi-agent dispatch and control workflow"
+  default_prompt: "Use $ReiT-orchestrator to split complex work into safe subagent tasks and control integration."
+
+policy:
+  allow_implicit_invocation: true

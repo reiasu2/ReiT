@@ -1,0 +1,7 @@
+﻿interface:
+  display_name: "ReiT Plan"
+  short_description: "ReiT lightweight and formal execution planning"
+  default_prompt: "Use $ReiT-plan to write a decision-complete plan before implementation."
+
+policy:
+  allow_implicit_invocation: true
