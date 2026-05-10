@@ -150,6 +150,10 @@ or, if no ReiT skill or ReiT sub-skill was used:
 
 `Used skills: none`
 
+If a task meets `ReiT-plan` triggers, activate `ReiT-plan` and include it in the marker even when no separate plan document was shown.
+
+Do not mark `ReiT-plan` for ordinary lightweight sequencing or implicit local planning that did not meet `ReiT-plan` triggers.
+
 ## Notes and Output Location
 
 Default note and summary output root: use the user-provided path, project-local documentation, or a clearly named notes directory when appropriate.
@@ -232,6 +236,8 @@ Use these rules when the user asks to commit or when preparing a commit message:
 - For execution tasks, report current action and next step.
 - For analysis tasks, report conclusion, basis, risk, and recommendation.
 - During testing, every final reply must end with exactly one call marker: `Used skills: ReiT`, `Used skills: ReiT, <sub-skill>`, or `Used skills: none`.
+- If a task meets `ReiT-plan` triggers, activate `ReiT-plan` and include it in the marker even when no separate plan document was shown.
+- Do not mark `ReiT-plan` for ordinary lightweight sequencing or implicit local planning that did not meet `ReiT-plan` triggers.
 - Use Markdown code blocks with language tags for multi-line code, config, or logs.
 - Use tables only when they make comparison clearer.
 

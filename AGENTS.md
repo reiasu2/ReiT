@@ -60,6 +60,8 @@ Routing boundary: `ReiT-brainstorming` decides what and why, `ReiT-plan` decides
 - Every final reply must end with exactly one English usage marker.
 - Format: `Used skills: ReiT[, ReiT-subskill...]` or `Used skills: none`.
 - Include every ReiT sub-skill that materially shaped the reply.
+- If a task meets `ReiT-plan` triggers, activate `ReiT-plan` and include it in the marker even when no separate plan document was shown.
+- Do not mark `ReiT-plan` for ordinary lightweight sequencing or implicit local planning that did not meet `ReiT-plan` triggers.
 
 ## Compatibility Additions
 
