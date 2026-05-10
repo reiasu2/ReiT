@@ -1,5 +1,5 @@
 ﻿---
-name: ReiT-worktree
+name: reit-worktree
 description: Use for deciding when to use a git worktree, managing branch/worktree hygiene, or closing out parallel work without automatically merging, deleting, pushing, or pruning.
 ---
 
@@ -65,7 +65,7 @@ During ReiT testing, every final reply shaped by this skill MUST end with exactl
 
 Use one of these formats:
 
-`Used skills: ReiT, ReiT-worktree`
+`Used skills: reit, reit-worktree`
 
 or, if no ReiT skill or ReiT sub-skill was actually used:
 

@@ -1,5 +1,5 @@
 ﻿---
-name: ReiT-verification
+name: reit-verification
 description: Use before claiming work is complete, fixed, passing, ready, or mergeable. Requires fresh verification evidence appropriate to the task risk.
 ---
 
@@ -76,7 +76,7 @@ During ReiT testing, every final reply shaped by this skill MUST end with exactl
 
 Use one of these formats:
 
-`Used skills: ReiT, ReiT-verification`
+`Used skills: reit, reit-verification`
 
 or, if no ReiT skill or ReiT sub-skill was actually used:
 

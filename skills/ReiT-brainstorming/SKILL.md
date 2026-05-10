@@ -1,5 +1,5 @@
 ﻿---
-name: ReiT-brainstorming
+name: reit-brainstorming
 description: Use for lightweight requirement clarification, product or architecture exploration, implementation approach comparison, UI direction, and pre-implementation thinking when full ReiT brainstorming is not yet needed.
 ---
 
@@ -22,7 +22,7 @@ Do not use for:
 
 - Straightforward commands or clearly scoped edits
 - Pure code review
-- Bug reproduction or root-cause debugging, where `ReiT-debugging` is better
+- Bug reproduction or root-cause debugging, where `reit-debugging` is better
 - Tasks where the user explicitly asks to implement immediately and the scope is already clear
 
 ## Core Rule
@@ -80,7 +80,7 @@ Keep options concrete. Explain tradeoffs in terms of implementation cost, risk, 
 If the user says "OK", "continue", "looks good", or gives equivalent approval:
 
 - Small task: implement directly with targeted verification.
-- Medium task: hand off to `ReiT-plan` for execution order unless the scope is already narrow and obvious.
+- Medium task: hand off to `reit-plan` for execution order unless the scope is already narrow and obvious.
 - Large task: switch to ReiT Full Brainstorming Mode before code.
 
 ## Output Shape
@@ -188,7 +188,7 @@ Only mark this skill when it was actually activated and its brainstorming workfl
 
 Use one of these formats:
 
-`Used skills: ReiT, ReiT-brainstorming`
+`Used skills: reit, reit-brainstorming`
 
 or, if no ReiT skill or ReiT sub-skill was actually used:
 

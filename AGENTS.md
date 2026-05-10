@@ -1,12 +1,12 @@
 ﻿# Global Agent Rules
 
-Use `ReiT` as the default workflow skill.
+Use `reit` as the default workflow skill.
 
 ReiT is a Codex workflow layer. It keeps useful engineering discipline from Superpowers as reference material, but the active workflow is self-maintained by ReiT. Lightweight tasks stay lightweight; medium, ambiguous, complex, or high-risk tasks route to focused ReiT sub-skills.
 
 ## Startup Rules
 
-- At the start of each task, use `ReiT` to classify task size, risk, verification level, skill routing, parallelism, and worktree needs.
+- At the start of each task, use `reit` to classify task size, risk, verification level, skill routing, parallelism, and worktree needs.
 - If Codex does not auto-load skills, use this file as the fallback routing rule.
 - Explicit user instructions, repository rules, and current-session constraints take priority.
 - Original Superpowers is reference material only, not the default runtime.
@@ -14,15 +14,15 @@ ReiT is a Codex workflow layer. It keeps useful engineering discipline from Supe
 ## Fallback Routing
 
 - Small tasks: do the direct change with targeted verification; do not default to formal design, formal planning, worktrees, or heavy review.
-- Requirements, options, UI, product, or architecture direction: use `ReiT-brainstorming`; complex cases upgrade internally to ReiT Full Brainstorming Mode.
-- Medium, ambiguous, multi-step, multi-file, or explicit plan-first tasks: use `ReiT-plan`.
-- Complex or multi-task work with independent boundaries: use `ReiT-orchestrator`. Its main purpose is to save main conversation context. The current conversation is the controller brain for dispatch, tracking, integration, and final verification. If the split is artificial, use no-spawn mode.
-- Bugs, failures, unexpected behavior, build failures, or test failures: use `ReiT-debugging`.
-- Before claiming fixed, complete, passing, ready, or mergeable: use `ReiT-verification`.
-- Code review or review feedback: use `ReiT-review`.
-- Branch, worktree, and parallel-work closeout: use `ReiT-worktree`; broad daily/repo closeout can use `worktree-closeout`.
+- Requirements, options, UI, product, or architecture direction: use `reit-brainstorming`; complex cases upgrade internally to ReiT Full Brainstorming Mode.
+- Medium, ambiguous, multi-step, multi-file, or explicit plan-first tasks: use `reit-plan`.
+- Complex or multi-task work with independent boundaries: use `reit-orchestrator`. Its main purpose is to save main conversation context. The current conversation is the controller brain for dispatch, tracking, integration, and final verification. If the split is artificial, use no-spawn mode.
+- Bugs, failures, unexpected behavior, build failures, or test failures: use `reit-debugging`.
+- Before claiming fixed, complete, passing, ready, or mergeable: use `reit-verification`.
+- Code review or review feedback: use `reit-review`.
+- Branch, worktree, and parallel-work closeout: use `reit-worktree`; broad daily/repo closeout can use `worktree-closeout`.
 
-Routing boundary: `ReiT-brainstorming` decides what and why, `ReiT-plan` decides execution order, and `ReiT-orchestrator` decides whether bounded delegation saves main-context space.
+Routing boundary: `reit-brainstorming` decides what and why, `reit-plan` decides execution order, and `reit-orchestrator` decides whether bounded delegation saves main-context space.
 
 ## Invocation Ledger
 
@@ -34,10 +34,10 @@ Routing boundary: `ReiT-brainstorming` decides what and why, `ReiT-plan` decides
 
 ## Codex Plan Mode Compatibility
 
-- Codex Plan Mode has higher priority than `ReiT-plan`; when Plan Mode is active, plan only and do not edit files or execute implementation work.
-- In Plan Mode, medium, ambiguous, multi-step, multi-file, or explicit plan-first tasks should use the `ReiT-plan` style and quality bar.
-- If ReiT-plan shapes a Plan Mode reply, end with `Used skills: ReiT, ReiT-plan`.
-- When Codex returns to Default mode, `ReiT-plan` may use the plan-first-then-implement route.
+- Codex Plan Mode has higher priority than `reit-plan`; when Plan Mode is active, plan only and do not edit files or execute implementation work.
+- In Plan Mode, medium, ambiguous, multi-step, multi-file, or explicit plan-first tasks should use the `reit-plan` style and quality bar.
+- If reit-plan shapes a Plan Mode reply, end with `Used skills: reit, reit-plan`.
+- When Codex returns to Default mode, `reit-plan` may use the plan-first-then-implement route.
 
 ## Safety Rules
 
@@ -45,7 +45,7 @@ Routing boundary: `ReiT-brainstorming` decides what and why, `ReiT-plan` decides
 - Normal pushes for this repository may follow the GitHub push cadence below. Force-pushes or history rewrites still require explicit user approval.
 - Do not hardcode secrets, credentials, tokens, or API keys.
 - Do not concatenate untrusted input into shell commands or SQL.
-- Automatic orchestration is available for complex or multi-task work, primarily to save main context. Spawn subagents only when `ReiT-orchestrator` finds independent, bounded, low-conflict tasks that materially reduce main-context load. Do not specify a model by default.
+- Automatic orchestration is available for complex or multi-task work, primarily to save main context. Spawn subagents only when `reit-orchestrator` finds independent, bounded, low-conflict tasks that materially reduce main-context load. Do not specify a model by default.
 - Before completion claims, run directly relevant verification. If key verification cannot run, explain why and lower the completion claim.
 
 ## GitHub Push Cadence
@@ -66,15 +66,15 @@ Routing boundary: `ReiT-brainstorming` decides what and why, `ReiT-plan` decides
 
 - ReiT is currently in testing mode.
 - Every final reply must end with exactly one English usage marker.
-- Format: `Used skills: ReiT[, ReiT-subskill...]` or `Used skills: none`.
+- Format: `Used skills: reit[, reit-subskill...]` or `Used skills: none`.
 - Include every ReiT sub-skill that was activated in the invocation ledger.
-- If a task meets `ReiT-plan` triggers, activate `ReiT-plan` and include it in the marker even when no separate plan document was shown.
-- Do not mark `ReiT-plan` for ordinary lightweight sequencing or implicit local planning that did not meet `ReiT-plan` triggers.
+- If a task meets `reit-plan` triggers, activate `reit-plan` and include it in the marker even when no separate plan document was shown.
+- Do not mark `reit-plan` for ordinary lightweight sequencing or implicit local planning that did not meet `reit-plan` triggers.
 
 ## Compatibility Additions
 
 - If the user provides `plan2go=<path>`, treat that file as the current execution-plan source. Read it before planning. Do not overwrite it unless explicitly asked.
-- Before claiming completion, preparing a commit, preparing a push, or preparing a PR, use `ReiT-verification` and its Change Delivery Gate.
+- Before claiming completion, preparing a commit, preparing a push, or preparing a PR, use `reit-verification` and its Change Delivery Gate.
 - Commit message format: `<type>(scope): <summary>`. The summary should be concise, imperative, and should not end with a period.
 - Repeatedly useful lessons can be documented in project docs or a user-specified notes location. Minimum template: title, trigger signal, root cause or constraint, correct practice, verification method, applicable scope.
 
@@ -84,14 +84,14 @@ No fixed default workflow output directory is configured. For cross-project note
 
 Installed skills:
 
-- `ReiT`
-- `ReiT-brainstorming`
-- `ReiT-plan`
-- `ReiT-debugging`
-- `ReiT-verification`
-- `ReiT-review`
-- `ReiT-orchestrator`
-- `ReiT-worktree`
+- `reit`
+- `reit-brainstorming`
+- `reit-plan`
+- `reit-debugging`
+- `reit-verification`
+- `reit-review`
+- `reit-orchestrator`
+- `reit-worktree`
 - `research-note-wrap`
 - `session-wrap`
 - `commit-daily-summary`

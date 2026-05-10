@@ -1,5 +1,5 @@
 ﻿---
-name: ReiT-plan
+name: reit-plan
 description: Use for ReiT plan-first execution planning when a task is medium, large, ambiguous, multi-step, multi-file, or explicitly asks to walk a plan before implementation.
 ---
 
@@ -87,12 +87,12 @@ Codex Plan Mode is a system-level mode and has higher priority than this skill.
 
 When Codex Plan Mode is active:
 
-- Use ReiT-plan as the planning style and quality bar.
+- Use reit-plan as the planning style and quality bar.
 - Do not edit files or execute implementation work.
 - Produce a decision-complete plan that can be implemented after Plan Mode ends.
-- Mark the final reply as `Used skills: ReiT, ReiT-plan` only when this skill was actually activated and its planning constraints were used.
+- Mark the final reply as `Used skills: reit, reit-plan` only when this skill was actually activated and its planning constraints were used.
 
-When Codex is in Default mode and the user already asked for implementation, use ReiT-plan to plan first, then proceed if the plan exposes no blocker.
+When Codex is in Default mode and the user already asked for implementation, use reit-plan to plan first, then proceed if the plan exposes no blocker.
 
 ## Execution Handoff
 
@@ -100,7 +100,7 @@ After planning:
 
 - Small or medium plan with clear scope: proceed to implementation when the user asked to implement.
 - Large or risky plan: present the plan and wait if any user choice remains.
-- If subagents are needed or explicitly requested, hand off to `ReiT-orchestrator` for ownership boundaries and dispatch.
+- If subagents are needed or explicitly requested, hand off to `reit-orchestrator` for ownership boundaries and dispatch.
 
 ## Self-Review
 
@@ -120,7 +120,7 @@ Only mark this skill when it was actually activated by the triggers above or by 
 
 Use one of these formats:
 
-`Used skills: ReiT, ReiT-plan`
+`Used skills: reit, reit-plan`
 
 or, if no ReiT skill or ReiT sub-skill was actually used:
 

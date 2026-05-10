@@ -1,7 +1,7 @@
 ﻿interface:
   display_name: "ReiT Review"
   short_description: "ReiT local code review and feedback handling"
-  default_prompt: "Use $ReiT-review to review this change for bugs and regressions."
+  default_prompt: "Use $reit-review to review this change for bugs and regressions."
 
 policy:
   allow_implicit_invocation: true

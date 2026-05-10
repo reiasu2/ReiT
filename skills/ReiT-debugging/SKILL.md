@@ -1,5 +1,5 @@
 ﻿---
-name: ReiT-debugging
+name: reit-debugging
 description: Use for bugs, test failures, build failures, unexpected behavior, performance issues, and integration problems where ReiT should find root cause before changing code.
 ---
 
@@ -73,7 +73,7 @@ During ReiT testing, every final reply shaped by this skill MUST end with exactl
 
 Use one of these formats:
 
-`Used skills: ReiT, ReiT-debugging`
+`Used skills: reit, reit-debugging`
 
 or, if no ReiT skill or ReiT sub-skill was actually used:
 

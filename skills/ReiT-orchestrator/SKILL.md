@@ -1,5 +1,5 @@
 ﻿---
-name: ReiT-orchestrator
+name: reit-orchestrator
 description: Use when a task is complex, multi-part, or naturally parallelizable and ReiT should act as the controller brain that delegates bounded work to subagents, integrates results, and verifies centrally.
 ---
 
@@ -156,7 +156,7 @@ Role: explorer / worker / verifier
 Goal: one concrete outcome
 Read scope: files/modules/commands allowed for inspection
 Write scope: files/modules allowed to edit, or "read-only"
-Do not touch: shared contracts, schemas, dependencies, root config, CI, migrations, or main entry points without controller approval after `ReiT-plan`
+Do not touch: shared contracts, schemas, dependencies, root config, CI, migrations, or main entry points without controller approval after `reit-plan`
 Expected output: compact findings / changed files / verification result / blockers
 Stop conditions: scope expansion, conflicting edits, missing context, unsafe change, verification failure outside scope
 ```
@@ -177,7 +177,7 @@ Prefer:
 Shared-boundary rule:
 
 - Ordinary workers must not touch shared contracts, schemas, dependencies, root config, CI, migrations, or main entry points.
-- If a shared-boundary change is required, the controller pauses worker dispatch and routes through `ReiT-plan`.
+- If a shared-boundary change is required, the controller pauses worker dispatch and routes through `reit-plan`.
 - A specialist may inspect shared-boundary code read-only, but write ownership stays with the controller unless explicitly assigned after planning.
 
 ## Coordination Loop
@@ -189,7 +189,7 @@ Shared-boundary rule:
 5. Wait only when blocked on a subagent result.
 6. Review returned changes or findings.
 7. Resolve conflicts centrally.
-8. Run `ReiT-verification` before completion.
+8. Run `reit-verification` before completion.
 9. Close subagents that are no longer needed.
 
 ## Integration Rules
@@ -198,8 +198,8 @@ Shared-boundary rule:
 - Do not paste long subagent output into the final answer.
 - Re-read changed files or diffs before claiming integration.
 - If two subagents touched the same behavior, the controller decides the final shape.
-- If a subagent reports scope expansion, route back through `ReiT-plan`.
-- If root cause is still unclear, route to `ReiT-debugging`.
+- If a subagent reports scope expansion, route back through `reit-plan`.
+- If root cause is still unclear, route to `reit-debugging`.
 
 ## Failure Handling
 
@@ -209,19 +209,19 @@ If a subagent fails, expands scope, conflicts with another edit, or finds unrela
 2. Record the smallest useful finding in the ledger.
 3. Close or stop waiting on the subagent if it is no longer useful.
 4. Route the controller back to the right workflow:
-   - `ReiT-debugging` for unclear root cause or failing behavior.
-   - `ReiT-plan` for scope growth, shared-boundary changes, or integration risk.
-   - `ReiT-verification` for final proof after integration.
+   - `reit-debugging` for unclear root cause or failing behavior.
+   - `reit-plan` for scope growth, shared-boundary changes, or integration risk.
+   - `reit-verification` for final proof after integration.
 5. Do not spawn additional agents to compensate until the controller has resolved the failure mode.
 
 ## Output and Call Marker
 
 When this skill shapes the work, the final reply must include:
 
-`Used skills: ReiT, ReiT-orchestrator`
+`Used skills: reit, reit-orchestrator`
 
 If other ReiT skills were used, append them:
 
-`Used skills: ReiT, ReiT-orchestrator, ReiT-plan, ReiT-verification`
+`Used skills: reit, reit-orchestrator, reit-plan, reit-verification`
 
 

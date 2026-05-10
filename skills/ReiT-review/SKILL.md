@@ -1,5 +1,5 @@
 ﻿---
-name: ReiT-review
+name: reit-review
 description: Use for local code review, reviewing implemented work before merge, or handling review feedback with technical rigor and scoped fixes.
 ---
 
@@ -58,7 +58,7 @@ During ReiT testing, every final reply shaped by this skill MUST end with exactl
 
 Use one of these formats:
 
-`Used skills: ReiT, ReiT-review`
+`Used skills: reit, reit-review`
 
 or, if no ReiT skill or ReiT sub-skill was actually used:
 

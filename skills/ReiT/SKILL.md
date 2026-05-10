@@ -1,5 +1,5 @@
 ﻿---
-name: ReiT
+name: reit
 description: Use ReiT as a Codex workflow layer. Applies lightweight-vs-full ReiT workflow judgment, task sizing, verification level selection, subagent boundaries, workflow skill routing, multi-agent orchestration, note output location, Git safety, and concise user-facing communication rules.
 ---
 
@@ -25,7 +25,7 @@ Use ReiT workflow discipline. Original Superpowers is only a reference source, n
 
 - Prefer the shortest path that still satisfies quality and verification needs.
 - Decide first whether the task is read-only, lightweight, medium, or high-risk.
-- For medium, large, ambiguous, or high-risk implementation work, use `ReiT-plan` before editing. For complex or multi-task work with independent parts, use `ReiT-orchestrator` as the controller brain.
+- For medium, large, ambiguous, or high-risk implementation work, use `reit-plan` before editing. For complex or multi-task work with independent parts, use `reit-orchestrator` as the controller brain.
 - Use a single focused workflow skill when enough.
 - Escalate to ReiT full workflow or a focused ReiT sub-skill only when task size, risk, or ambiguity justifies it.
 - Keep moving when the user asks to continue, unless blocked by a real missing decision or unsafe action.
@@ -101,15 +101,15 @@ Implementation includes features, bug fixes, behavior changes, refactors, UI wor
 
 Use ReiT sub-skills as the self-maintained workflow set:
 
-- `ReiT-brainstorming`: requirements, design, options, UI/product/architecture direction; escalates internally to full brainstorming mode.
-- `ReiT-plan`: medium, large, ambiguous, multi-step, multi-file, or explicit plan-first implementation work.
-- `ReiT-debugging`: bugs, failures, unexpected behavior, build/test failures, and root-cause investigation.
-- `ReiT-verification`: completion gate before claiming fixed, passing, complete, ready, or mergeable.
-- `ReiT-review`: local code review and review feedback handling.
-- `ReiT-orchestrator`: complex or multi-task controller mode that saves main-context space by delegating bounded reading/implementation/verification to subagents, then integrates centrally.
-- `ReiT-worktree`: worktree/branch decision, hygiene, and safe closeout.
+- `reit-brainstorming`: requirements, design, options, UI/product/architecture direction; escalates internally to full brainstorming mode.
+- `reit-plan`: medium, large, ambiguous, multi-step, multi-file, or explicit plan-first implementation work.
+- `reit-debugging`: bugs, failures, unexpected behavior, build/test failures, and root-cause investigation.
+- `reit-verification`: completion gate before claiming fixed, passing, complete, ready, or mergeable.
+- `reit-review`: local code review and review feedback handling.
+- `reit-orchestrator`: complex or multi-task controller mode that saves main-context space by delegating bounded reading/implementation/verification to subagents, then integrates centrally.
+- `reit-worktree`: worktree/branch decision, hygiene, and safe closeout.
 
-Routing boundary: `ReiT-brainstorming` decides what and why, `ReiT-plan` decides execution order, and `ReiT-orchestrator` decides whether bounded delegation saves main-context space.
+Routing boundary: `reit-brainstorming` decides what and why, `reit-plan` decides execution order, and `reit-orchestrator` decides whether bounded delegation saves main-context space.
 
 ## Verification Levels
 
@@ -127,15 +127,15 @@ Do not claim "passed", "complete", "ready", or "fixed" without verification evid
 
 Use ReiT-native judgment first. Do not depend on the original Superpowers plugin being installed.
 
-- Requirements and design: use `ReiT-brainstorming` for lightweight clarification, option comparison, and pre-implementation thinking.
-- Planning: use `ReiT-plan` for medium tasks and formal plans for multi-step, multi-file, or high-risk work.
-- Orchestration: use `ReiT-orchestrator` when complex or multi-task work has independent parts suitable for subagents, especially when delegation will save main-context space. Use no-spawn mode if task splitting would be artificial.
-- Debugging: use `ReiT-debugging` to reproduce or observe the issue, gather facts, identify the smallest plausible cause, change one thing at a time, and verify.
+- Requirements and design: use `reit-brainstorming` for lightweight clarification, option comparison, and pre-implementation thinking.
+- Planning: use `reit-plan` for medium tasks and formal plans for multi-step, multi-file, or high-risk work.
+- Orchestration: use `reit-orchestrator` when complex or multi-task work has independent parts suitable for subagents, especially when delegation will save main-context space. Use no-spawn mode if task splitting would be artificial.
+- Debugging: use `reit-debugging` to reproduce or observe the issue, gather facts, identify the smallest plausible cause, change one thing at a time, and verify.
 - TDD: use only for high-risk behavior changes, new shared behavior, or bugs where a regression test is valuable.
-- Review: use `ReiT-review` for major features, complex fixes, and review feedback.
-- Completion verification: use `ReiT-verification` before declaring work complete.
-- Worktrees: use `ReiT-worktree` only when isolation materially helps branch hygiene or risk control.
-- Branch closeout: use `ReiT-worktree` for single-branch decisions or `worktree-closeout` for broader closeout scans.
+- Review: use `reit-review` for major features, complex fixes, and review feedback.
+- Completion verification: use `reit-verification` before declaring work complete.
+- Worktrees: use `reit-worktree` only when isolation materially helps branch hygiene or risk control.
+- Branch closeout: use `reit-worktree` for single-branch decisions or `worktree-closeout` for broader closeout scans.
 
 Use installed workflow skills when requested or clearly useful:
 
@@ -149,19 +149,19 @@ During ReiT testing, every final reply MUST end with exactly one call marker lin
 
 Use one of these formats:
 
-`Used skills: ReiT`
+`Used skills: reit`
 
 or, when sub-skills were used:
 
-`Used skills: ReiT, ReiT-plan`
+`Used skills: reit, reit-plan`
 
 or, if no ReiT skill or ReiT sub-skill was used:
 
 `Used skills: none`
 
-If a task meets `ReiT-plan` triggers, activate `ReiT-plan` and include it in the marker even when no separate plan document was shown.
+If a task meets `reit-plan` triggers, activate `reit-plan` and include it in the marker even when no separate plan document was shown.
 
-Do not mark `ReiT-plan` for ordinary lightweight sequencing or implicit local planning that did not meet `ReiT-plan` triggers.
+Do not mark `reit-plan` for ordinary lightweight sequencing or implicit local planning that did not meet `reit-plan` triggers.
 
 ## Notes and Output Location
 
@@ -190,11 +190,11 @@ No fixed default note root is configured; ask for a destination if the user did 
 
 ## Parallelism and Subagents
 
-Automatic subagent orchestration is available for complex or multi-task work, primarily to save main-context space. Use subagents when `ReiT-orchestrator` judges the work has independent, bounded tasks and system/platform rules allow it.
+Automatic subagent orchestration is available for complex or multi-task work, primarily to save main-context space. Use subagents when `reit-orchestrator` judges the work has independent, bounded tasks and system/platform rules allow it.
 
 Parallel work is appropriate only when independent tasks have clear read/write boundaries and low integration risk. Default to 1 to 3 subagents, use 4 only for clearly independent scopes, and batch anything larger. The current conversation remains the controller brain: it plans, dispatches, monitors, integrates, and verifies.
 
-Use `ReiT-orchestrator` for the detailed controller-worker protocol: decision order, trigger score, operating mode, task packets, compact ledger, coordination loop, failure handling, and integration rules.
+Use `reit-orchestrator` for the detailed controller-worker protocol: decision order, trigger score, operating mode, task packets, compact ledger, coordination loop, failure handling, and integration rules.
 
 Do not parallelize when:
 
@@ -244,10 +244,10 @@ Use these rules when the user asks to commit or when preparing a commit message:
 - Lead with the conclusion, then evidence, tradeoffs, and next steps.
 - For execution tasks, report current action and next step.
 - For analysis tasks, report conclusion, basis, risk, and recommendation.
-- During testing, every final reply must end with exactly one call marker: `Used skills: ReiT`, `Used skills: ReiT, <sub-skill>`, or `Used skills: none`.
+- During testing, every final reply must end with exactly one call marker: `Used skills: reit`, `Used skills: reit, <sub-skill>`, or `Used skills: none`.
 - Generate the marker from the invocation ledger, not from answer style.
-- If a task meets `ReiT-plan` triggers, activate `ReiT-plan` and include it in the marker even when no separate plan document was shown.
-- Do not mark `ReiT-plan` for ordinary lightweight sequencing or implicit local planning that did not meet `ReiT-plan` triggers.
+- If a task meets `reit-plan` triggers, activate `reit-plan` and include it in the marker even when no separate plan document was shown.
+- Do not mark `reit-plan` for ordinary lightweight sequencing or implicit local planning that did not meet `reit-plan` triggers.
 - Use Markdown code blocks with language tags for multi-line code, config, or logs.
 - Use tables only when they make comparison clearer.
 
