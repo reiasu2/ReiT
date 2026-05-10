@@ -2,6 +2,3 @@
   display_name: "ReiT"
   short_description: "ReiT lightweight Superpowers-inspired thinking layer"
   default_prompt: "Use $reit to choose the right lightweight or full workflow for this task."
-
-policy:
-  allow_implicit_invocation: true

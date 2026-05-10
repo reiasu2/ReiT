@@ -2,6 +2,3 @@
   display_name: "ReiT Verification"
   short_description: "ReiT pre-completion verification gate"
   default_prompt: "Use $reit-verification before claiming this work is complete."
-
-policy:
-  allow_implicit_invocation: true

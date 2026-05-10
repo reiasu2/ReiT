@@ -2,6 +2,3 @@
   display_name: "ReiT Debugging"
   short_description: "ReiT root-cause-first debugging workflow"
   default_prompt: "Use $reit-debugging to find the root cause before fixing this bug."
-
-policy:
-  allow_implicit_invocation: true
