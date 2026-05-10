@@ -116,6 +116,8 @@ Before using the plan:
 
 During ReiT testing, every final reply shaped by this skill MUST end with exactly one call marker line.
 
+Only mark this skill when it was actually activated by the triggers above or by Plan Mode compatibility rules. Ordinary lightweight sequencing or an implicit local todo list does not count.
+
 Use one of these formats:
 
 `Used skills: ReiT, ReiT-plan`

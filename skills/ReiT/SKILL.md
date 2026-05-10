@@ -30,6 +30,15 @@ Use ReiT workflow discipline. Original Superpowers is only a reference source, n
 - Escalate to ReiT full workflow or a focused ReiT sub-skill only when task size, risk, or ambiguity justifies it.
 - Keep moving when the user asks to continue, unless blocked by a real missing decision or unsafe action.
 
+## Invocation Ledger
+
+Maintain a lightweight internal ledger of ReiT skills actually activated in the current turn.
+
+- A skill counts as activated only when its trigger matched and its `SKILL.md` workflow constraints were used.
+- Similar answer style, ordinary local sequencing, or generic reasoning does not count as activation.
+- The final `Used skills` marker must be generated from the ledger.
+- If an explicit skill request is skipped because a higher-priority rule blocks it, say so briefly and do not list that skill as used.
+
 ## Lightweight Task Policy
 
 Lightweight tasks include single-file or small scoped edits, clear bug fixes, config changes, text changes, small tests, and local docs updates.
@@ -236,6 +245,7 @@ Use these rules when the user asks to commit or when preparing a commit message:
 - For execution tasks, report current action and next step.
 - For analysis tasks, report conclusion, basis, risk, and recommendation.
 - During testing, every final reply must end with exactly one call marker: `Used skills: ReiT`, `Used skills: ReiT, <sub-skill>`, or `Used skills: none`.
+- Generate the marker from the invocation ledger, not from answer style.
 - If a task meets `ReiT-plan` triggers, activate `ReiT-plan` and include it in the marker even when no separate plan document was shown.
 - Do not mark `ReiT-plan` for ordinary lightweight sequencing or implicit local planning that did not meet `ReiT-plan` triggers.
 - Use Markdown code blocks with language tags for multi-line code, config, or logs.

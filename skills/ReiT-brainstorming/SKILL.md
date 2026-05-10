@@ -14,6 +14,7 @@ Use for:
 - Unclear requirements
 - Multiple possible implementation approaches
 - Product, UI, workflow, architecture, or technical direction choices
+- Explicit brainstorming requests such as "brainstorm" or "brainstorm ideas"
 - "How should we do this?" conversations
 - Pre-implementation thinking before a medium task
 
@@ -182,6 +183,8 @@ Otherwise stay lightweight.
 ## ReiT Testing Call Marker
 
 During ReiT testing, every final reply shaped by this skill MUST end with exactly one call marker line.
+
+Only mark this skill when it was actually activated and its brainstorming workflow was used. A quick list of suggestions without scope classification, options, and recommendation does not count.
 
 Use one of these formats:
 

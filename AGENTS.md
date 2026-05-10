@@ -24,6 +24,14 @@ ReiT is a Codex workflow layer. It keeps useful engineering discipline from Supe
 
 Routing boundary: `ReiT-brainstorming` decides what and why, `ReiT-plan` decides execution order, and `ReiT-orchestrator` decides whether bounded delegation saves main-context space.
 
+## Invocation Ledger
+
+- Keep a lightweight internal ledger of ReiT skills that were actually activated during the turn.
+- A skill counts as activated only when its trigger matched and its `SKILL.md` workflow constraints were used.
+- Similar answer style, ordinary local sequencing, or generic reasoning does not count as activation.
+- The final `Used skills` marker must be generated from this ledger, not from the shape of the final prose.
+- If an explicit skill request is skipped because a higher-priority rule blocks it, say so briefly and do not list that skill as used.
+
 ## Codex Plan Mode Compatibility
 
 - Codex Plan Mode has higher priority than `ReiT-plan`; when Plan Mode is active, plan only and do not edit files or execute implementation work.
@@ -59,7 +67,7 @@ Routing boundary: `ReiT-brainstorming` decides what and why, `ReiT-plan` decides
 - ReiT is currently in testing mode.
 - Every final reply must end with exactly one English usage marker.
 - Format: `Used skills: ReiT[, ReiT-subskill...]` or `Used skills: none`.
-- Include every ReiT sub-skill that materially shaped the reply.
+- Include every ReiT sub-skill that was activated in the invocation ledger.
 - If a task meets `ReiT-plan` triggers, activate `ReiT-plan` and include it in the marker even when no separate plan document was shown.
 - Do not mark `ReiT-plan` for ordinary lightweight sequencing or implicit local planning that did not meet `ReiT-plan` triggers.
 
