@@ -1,4 +1,4 @@
-﻿---
+---
 name: reit-brainstorming
 description: Use for lightweight requirement clarification, product or architecture exploration, implementation approach comparison, UI direction, and pre-implementation thinking when full ReiT brainstorming is not yet needed.
 ---

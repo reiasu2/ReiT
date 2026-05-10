@@ -1,4 +1,4 @@
-﻿---
+---
 name: reit-debugging
 description: Use for bugs, test failures, build failures, unexpected behavior, performance issues, and integration problems where ReiT should find root cause before changing code.
 ---

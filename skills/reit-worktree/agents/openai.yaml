@@ -1,4 +1,4 @@
-﻿interface:
+interface:
   display_name: "ReiT Worktree"
   short_description: "ReiT branch and worktree closeout rules"
   default_prompt: "Use $reit-worktree to decide safe branch or worktree closeout steps."

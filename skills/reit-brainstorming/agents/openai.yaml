@@ -1,4 +1,4 @@
-﻿interface:
+interface:
   display_name: "ReiT Brainstorming"
   short_description: "ReiT lightweight requirement clarification and option comparison"
   default_prompt: "Use $reit-brainstorming to compare lightweight options before implementation."

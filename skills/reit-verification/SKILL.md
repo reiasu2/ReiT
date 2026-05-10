@@ -1,4 +1,4 @@
-﻿---
+---
 name: reit-verification
 description: Use before claiming work is complete, fixed, passing, ready, or mergeable. Requires fresh verification evidence appropriate to the task risk.
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 name: reit-orchestrator
 description: Use when a task is complex, multi-part, or naturally parallelizable and ReiT should act as the controller brain that delegates bounded work to subagents, integrates results, and verifies centrally.
 ---

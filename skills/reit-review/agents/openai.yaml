@@ -1,4 +1,4 @@
-﻿interface:
+interface:
   display_name: "ReiT Review"
   short_description: "ReiT local code review and feedback handling"
   default_prompt: "Use $reit-review to review this change for bugs and regressions."

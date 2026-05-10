@@ -1,4 +1,4 @@
-﻿interface:
+interface:
   display_name: "ReiT Plan"
   short_description: "ReiT lightweight and formal execution planning"
   default_prompt: "Use $reit-plan to write a decision-complete plan before implementation."

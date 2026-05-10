@@ -1,4 +1,4 @@
-﻿---
+---
 name: reit-worktree
 description: Use for deciding when to use a git worktree, managing branch/worktree hygiene, or closing out parallel work without automatically merging, deleting, pushing, or pruning.
 ---

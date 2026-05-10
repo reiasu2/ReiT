@@ -1,4 +1,4 @@
-﻿---
+---
 name: reit-plan
 description: Use for ReiT plan-first execution planning when a task is medium, large, ambiguous, multi-step, multi-file, or explicitly asks to walk a plan before implementation.
 ---

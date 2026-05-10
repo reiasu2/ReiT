@@ -1,4 +1,4 @@
-﻿---
+---
 name: reit-review
 description: Use for local code review, reviewing implemented work before merge, or handling review feedback with technical rigor and scoped fixes.
 ---

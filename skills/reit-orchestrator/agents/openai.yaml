@@ -1,4 +1,4 @@
-﻿interface:
+interface:
   display_name: "ReiT Orchestrator"
   short_description: "ReiT multi-agent dispatch and control workflow"
   default_prompt: "Use $reit-orchestrator to split complex work into safe subagent tasks and control integration."

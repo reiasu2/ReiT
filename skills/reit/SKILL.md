@@ -1,4 +1,4 @@
-﻿---
+---
 name: reit
 description: Use ReiT as a Codex workflow layer. Applies lightweight-vs-full ReiT workflow judgment, task sizing, verification level selection, subagent boundaries, workflow skill routing, multi-agent orchestration, note output location, Git safety, and concise user-facing communication rules.
 ---
