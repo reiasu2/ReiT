@@ -1,11 +1,11 @@
 ---
 name: reit
-description: Use ReiT as a Codex workflow layer. Applies lightweight-vs-full ReiT workflow judgment, task sizing, verification level selection, subagent boundaries, workflow skill routing, multi-agent orchestration, note output location, Git safety, and concise user-facing communication rules.
+description: Use ReiT, Rei's personal thinking layer for Codex sessions. Applies lightweight-vs-full ReiT workflow judgment, task sizing, verification level selection, subagent boundaries, workflow skill routing, multi-agent orchestration, note output location, Git safety, and concise Chinese communication rules.
 ---
 
 # ReiT
 
-Use ReiT as the default workflow layer before deciding whether to invoke ReiT full workflows. It keeps engineering discipline available, but prevents small tasks from being over-processed.
+Use ReiT as Rei's default personal thinking layer before deciding whether to invoke ReiT full workflows. It keeps engineering discipline available, but prevents small tasks from being over-processed.
 
 ## Priority
 
@@ -137,7 +137,7 @@ Use ReiT-native judgment first. Do not depend on the original Superpowers plugin
 - Worktrees: use `reit-worktree` only when isolation materially helps branch hygiene or risk control.
 - Branch closeout: use `reit-worktree` for single-branch decisions or `worktree-closeout` for broader closeout scans.
 
-Use installed workflow skills when requested or clearly useful:
+Use installed personal workflow skills when requested or clearly useful:
 
 - `research-note-wrap`: research notes and synthesis.
 - `session-wrap`: session summary and handoff.
@@ -165,11 +165,16 @@ Do not mark `reit-plan` for ordinary lightweight sequencing or implicit local pl
 
 ## Notes and Output Location
 
-Default note and summary output root: use the user-provided path, project-local documentation, or a clearly named notes directory when appropriate.
+Default note and summary output root:
+
+`E:\Other\春树暮云\Codex工作流`
 
 - Use the user-specified path when provided.
 - Put project-specific material in the project when appropriate.
 - For cross-project notes, daily summaries, session summaries, and research notes, ask for a destination if the user did not provide one.
+- In the Obsidian vault `E:\Other\春树暮云`, only `E:\Other\春树暮云\Codex工作流` is the default writable workflow-output area.
+- Treat all other files under `E:\Other\春树暮云` as read-only unless the user explicitly names the file or directory to modify in the current conversation.
+- Do not modify diary notes, People pages, indexes, `.obsidian` state, attachments, or other vault files as part of workflow notes, summaries, reports, or research output unless explicitly requested.
 - Prefer conclusions, structure, status, and next steps.
 - Avoid chat transcript dumps and low-signal process logs.
 - Suggest writing durable lessons into a project `AGENTS.md` when useful, but do not edit unrelated projects without user intent.
@@ -190,7 +195,7 @@ No fixed default note root is configured; ask for a destination if the user did 
 
 ## Parallelism and Subagents
 
-Automatic subagent orchestration is available for complex or multi-task work, primarily to save main-context space. Use subagents when `reit-orchestrator` judges the work has independent, bounded tasks and system/platform rules allow it.
+Rei has enabled automatic subagent orchestration for complex or multi-task work, primarily to save main-context space. Use subagents when `reit-orchestrator` judges the work has independent, bounded tasks and system/platform rules allow it.
 
 Parallel work is appropriate only when independent tasks have clear read/write boundaries and low integration risk. Default to 1 to 3 subagents, use 4 only for clearly independent scopes, and batch anything larger. The current conversation remains the controller brain: it plans, dispatches, monitors, integrates, and verifies.
 
@@ -230,16 +235,13 @@ Use these rules when the user asks to commit or when preparing a commit message:
 
 - Format: `<type>(scope): <summary>`
 - `scope` is optional.
-- For public repositories, use an English imperative summary and keep public commit messages free of private details.
-- For repositories without explicit language rules, follow project conventions.
-- Keep the summary concise and do not end it with a period.
+- `summary` should be Chinese by default, start with a verb, be no longer than 50 Chinese characters, and not end with a period.
 - Common `type` values: `feat`, `fix`, `refactor`, `docs`, `test`, `chore`.
 - Do not commit unless the user explicitly asks for a commit or the repository defines a checkpoint/push cadence that grants ordinary commit permission.
 
 ## Communication
 
-- Match the user's language for chat replies unless a higher-priority repository rule says otherwise.
-- Keep public repository artifacts, commit messages, and durable docs in the language required by that repository.
+- Default to Chinese; English technical terms are fine.
 - Use English for code identifiers.
 - Lead with the conclusion, then evidence, tradeoffs, and next steps.
 - For execution tasks, report current action and next step.
