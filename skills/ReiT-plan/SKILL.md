@@ -90,7 +90,7 @@ When Codex Plan Mode is active:
 - Use ReiT-plan as the planning style and quality bar.
 - Do not edit files or execute implementation work.
 - Produce a decision-complete plan that can be implemented after Plan Mode ends.
-- Mark the final reply as `Used skills: ReiT, ReiT-plan` when this skill shaped the plan.
+- Mark the final reply as `Used skills: ReiT, ReiT-plan` only when this skill was actually activated and its planning constraints were used.
 
 When Codex is in Default mode and the user already asked for implementation, use ReiT-plan to plan first, then proceed if the plan exposes no blocker.
 
