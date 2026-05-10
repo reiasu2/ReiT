@@ -98,5 +98,5 @@ Installed skills:
 - `project-daily-summary`
 - `worktree-closeout`
 
-Main skill file: `~/.codex/skills/ReiT/SKILL.md`.
+Main skill file: `~/.codex/skills/reit/SKILL.md`.
 Reference source: `original-superpowers-source/skills/`.
